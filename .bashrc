@@ -50,7 +50,7 @@ alias ll='ls -AohF --color=auto' # --group-directories-first
 
 alias tree='tree -C --dirsfirst --noreport'
 
-alias grep='grep -IT'
+alias grep='grep -I'
 
 alias to-lower="tr '[:upper:]' '[:lower:]'"
 alias to-upper="tr '[:lower:]' '[:upper:]'"
