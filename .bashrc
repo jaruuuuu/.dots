@@ -87,6 +87,7 @@ function .dots.prompt-command {
     local P1_CODE='\[\e[32m\]'
     local P2_CODE='\[\e[34m\]'
     local P3_CODE='\[\e[33m\]'
+    local P4_CODE='\[\e[36m\]'
     local R_CODE='\[\e[0m\]'
 
     case $exit_code in
@@ -95,6 +96,12 @@ function .dots.prompt-command {
     esac
 
     PS1="${P1_CODE}${exit_code}${R_CODE} "
+
+    if [[ -n "$SSH_CLIENT" ]]
+    then
+        PS1+="${P4_CODE}\u@\h${R_CODE} "
+    fi
+
     PS1+="${P2_CODE}\w${R_CODE} "
     PS1+="${P3_CODE}λ${R_CODE} "
 
